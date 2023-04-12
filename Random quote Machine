@@ -1,0 +1,34 @@
+<div id="quote-box">
+  <div id="text"></div>
+  <div id="author"></div>
+  <button id="new-quote">New Quote</button>
+  <a id="tweet-quote" href="#">Tweet Quote</a>
+</div>
+#quote-box {
+  margin: 0 auto;
+  width: 50%;
+}
+const quotes = [
+  {
+    text: "The greatest glory in living lies not in never falling, but in rising every time we fall.",
+    author: "Nelson Mandela"
+  },
+  {
+    text: "The way to get started is to quit talking and begin doing.",
+    author: "Walt Disney"
+  },
+  // Add more quotes here
+];
+function generateQuote() {
+  const randomIndex = Math.floor(Math.random() * quotes.length);
+  const quote = quotes[randomIndex];
+  document.getElementById("text").textContent = quote.text;
+  document.getElementById("author").textContent = quote.author;
+}
+document.getElementById("new-quote").addEventListener("click", generateQuote);
+document.getElementById("tweet-quote").addEventListener("click", function() {
+  const text = encodeURIComponent(document.getElementById("text").textContent);
+  const author = encodeURIComponent(document.getElementById("author").textContent);
+  const tweetUrl = `https://twitter.com/intent/tweet?text=${text} - ${author}`;
+  window.open(tweetUrl);
+});
