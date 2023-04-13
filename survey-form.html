@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Survey Form</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <h1 id="title">Survey Form</h1>
+    <p id="description">Please fill out this survey form to help us improve our service.</p>
+    <form id="survey-form">
+      <label for="name" id="name-label">Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required>
+      
+      <label for="email" id="email-label">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      
+      <label for="number" id="number-label">Age:</label>
+      <input type="number" id="number" name="age" min="18" max="100" placeholder="Enter your age">
+      
+      <label for="dropdown" id="dropdown-label">Which option best describes your experience with our service?</label>
+      <select id="dropdown" name="experience">
+        <option value="" disabled selected>Select an option</option>
+        <option value="Excellent">Excellent</option>
+        <option value="Good">Good</option>
+        <option value="Fair">Fair</option>
+        <option value="Poor">Poor</option>
+      </select>
+      
+      <fieldset>
+        <legend>What kind of service did you use?</legend>
+        <label><input type="radio" name="service" value="Web Design">Web Design</label>
+        <label><input type="radio" name="service" value="Graphic Design">Graphic Design</label>
+        <label><input type="radio" name="service" value="Marketing">Marketing</label>
+        <label><input type="radio" name="service" value="Other">Other</label>
+      </fieldset>
+      
+      <fieldset>
+        <legend>Which features did you use?</legend>
+        <label><input type="checkbox" name="features" value="Chat Support">Chat Support</label>
+        <label><input type="checkbox" name="features" value="Email Support">Email Support</label>
+        <label><input type="checkbox" name="features" value="Phone Support">Phone Support</label>
+        <label><input type="checkbox" name="features" value="Video Support">Video Support</label>
+        <label><input type="checkbox" name="features" value="Other">Other</label>
+      </fieldset>
+      
+      <label for="comments">Additional comments:</label>
+      <textarea id="comments" name="comments"></textarea>
+      
+      <input type="submit" id="submit" value="Submit">
+    </form>
+  </body>
+</html>
+<style>
+/* Set default font and background colors */
+body {
+  font-family: Arial, sans-serif;
+  background-color: lightgray;
+}
+
+/* Style the survey form */
+#survey-form {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px gray;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Style the title */
+#title {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+/* Style the description */
+#description {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Style the form elements */
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type=text],
+input[type=email],
+input[type=number],
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 0 0 5px gray;
+}
+
+input[type=radio],
+input[type=checkbox] {
+  margin-right: 10px;
+}
+
+select option[disabled] {
+  color: gray;
+}
+
+/* Style the submit button */
+#submit {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  background-color: #4CAF50;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#submit:hover {
+  background-color: darkgreen;
+}
+</style>
